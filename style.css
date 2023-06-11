@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+
+body {
+  font-family: "Naruto";
+}
+
+main {
+  background: linear-gradient(
+    to right,
+    rgb(223, 116, 169) 0%,
+    rgb(109, 55, 147) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  height: 100vh;
+}
+
+main section {
+  width: 20%;
+  height: 60%;
+  border: 10px solid pink;
+  padding: 1rem;
+  text-align: center;
+}
+
+.total {
+  margin: 3rem 0;
+  font-weight: bolder;
+}
+
+.saved-score {
+  background-color: rgb(183, 147, 165);
+  padding: 1rem;
+  position: absolute;
+  top: 70%;
+  width: 13%;
+}
+
+.btn {
+  display: block;
+  cursor: pointer;
+  width: 75%;
+}
+
+.instruction {
+  margin-top: 28%;
+  text-align: center;
+}
+
+#roll,
+#hold {
+  padding: 0.3rem;
+  margin: 1rem;
+  background-color: beige;
+  text-align: center;
+}
+
+/* ACTIVE STATE */
+
+.active {
+  background-color: rgb(206, 186, 161);
+}
+
+img {
+  width: 45px;
+  height: 40px;
+}
