@@ -11,20 +11,23 @@ let rolledScoreEl2 = document.querySelector(".saved-score--2");
 let rollDice = document.querySelector("#roll");
 let hold = document.querySelector("#hold");
 
-let sectionEl1 = document.querySelector(".person--1");
-let sectionEl2 = document.querySelector(".person--2");
+let sectionEl1 = document.querySelector("section");
+let sectionEl2 = document.querySelector("section");
 
 let dicePicture = document.querySelector(".dice-picture");
 
 scoreEl1.textContent = 0;
 scoreEl2.textContent = 0;
 
-console.log(scoreEl1, scoreEl2, rolledScoreEl1, rolledScoreEl2, rollDice, hold);
+console.log(scoreEl1, scoreEl2, rollDice, hold);
 
+// rolledScoreEl1.textContent = 0;
+// rolledScoreEl2.textContent = 0;
+
+let sum = 0;
 // Generate a random number from 1-6
-const randomNo = function () {
+const dicePictureFunc = function () {
   let randomNo = Math.trunc(Math.random() * 6) + 1;
-  // console.log(randomNo);
 
   // Use the switch statement to determine the dice pics to be shown when it is rolled
   switch (randomNo) {
@@ -51,37 +54,20 @@ const randomNo = function () {
       "No Dice Rolled";
       break;
   }
+
+  sum += randomNo;
+  rolledScoreEl2.textContent = sum;
+
+  console.log(randomNo);
+
   return randomNo;
 };
 
-let savedScore1 = document.querySelector(".saved-score--1");
-let savedScore2 = document.querySelector(".saved-score--2");
-
 rollDice.addEventListener("click", function () {
-  // let heededScore = document.querySelector(".saved-score--2").textContent;
-
-  let firstScore;
-  let secondScore;
-  if (sectionEl1.classList.contains("active")) {
-    // randomNo();
-    console.log("First person");
-  } else if (sectionEl2.classList.contains("active")) {
-    // randomNo();
-    console.log("Second person");
-    firstScore = randomNo();
-    secondScore = firstScore + secondScore;
-    savedScore2.textContent = secondScore;
-
-    // heededScore += randomNo();
-    // firstScore = heededScore;
-    // secondScore += firstScore;
-    // savedScore2.textContent = secondScore;
-  }
+  dicePictureFunc();
+  // if (sectionEl1.classList.contains("active")) {
+  //   dicePictureFunc();
+  // } else if (sectionEl2.classList.contains("active")) {
+  //   dicePictureFunc();
+  // }
 });
-
-console.log(
-  savedScore1,
-  savedScore2
-  // heededScore
-  // typeof secondScore
-);
