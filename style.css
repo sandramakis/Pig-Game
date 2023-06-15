@@ -6,6 +6,7 @@
 
 body {
   font-family: "Naruto";
+  background-color: bisque;
 }
 
 main {
@@ -18,12 +19,13 @@ main {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  height: 100vh;
+  height: 80vh;
+  margin: 1.7rem;
 }
 
 main section {
-  width: 20%;
-  height: 60%;
+  width: 30%;
+  height: 90%;
   border: 10px solid pink;
   padding: 1rem;
   text-align: center;
@@ -32,9 +34,11 @@ main section {
 .total {
   margin: 3rem 0;
   font-weight: bolder;
+  background-color: pink;
+  padding: 2rem;
 }
 
-.saved-score {
+.current-score {
   background-color: rgb(183, 147, 165);
   padding: 1rem;
   position: absolute;
@@ -65,6 +69,7 @@ main section {
 
 .active {
   background-color: rgb(206, 186, 161);
+  transition: 0.8s all;
 }
 
 img {
