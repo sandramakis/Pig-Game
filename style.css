@@ -43,7 +43,7 @@ main section {
   padding: 1rem;
   position: absolute;
   top: 70%;
-  width: 13%;
+  width: 20%;
 }
 
 .btn {
@@ -52,17 +52,25 @@ main section {
   width: 75%;
 }
 
+.new-game {
+  line-height: 2rem;
+}
+
 .instruction {
-  margin-top: 28%;
   text-align: center;
 }
 
 #roll,
-#hold {
+#hold,
+#new-game {
   padding: 0.3rem;
   margin: 1rem;
   background-color: beige;
   text-align: center;
+}
+
+#new-game {
+  margin-bottom: 15rem;
 }
 
 /* ACTIVE STATE */
