@@ -6,14 +6,13 @@ let personEl1 = document.querySelector(".person--1");
 
 let totalScoreEl0 = document.querySelector(".total-score--0");
 let totalScoreEl1 = document.querySelector(".total-score--1");
-totalScoreEl0.textContent = 0;
-totalScoreEl1.textContent = 0;
 
-// let currentScoreEl0 = document.querySelector(".current-score--0");
-// let currentScoreEl1 = document.querySelector(".current-score--1");
+let currentScoreEl0 = document.querySelector(".current-score--0");
+let currentScoreEl1 = document.querySelector(".current-score--1");
 
-const btnRollDice = document.querySelector("#roll");
-const btnHold = document.querySelector("#hold");
+const rollDiceBtn = document.querySelector("#roll");
+const holdBtn = document.querySelector("#hold");
+const newGameBtn = document.querySelector("#new-game");
 
 let dicePicture = document.querySelector(".dice-picture");
 
@@ -21,8 +20,23 @@ let activePlayer = 0;
 let currentScore = 0;
 let scores = [0, 0]; //creating an array that'll hold the index of the total score for the two players
 
+// Initialize game when it restarts
+function init() {
+  currentScoreEl0.textContent = 0;
+  currentScoreEl1.textContent = 0;
+
+  totalScoreEl0.textContent = 0;
+  totalScoreEl1.textContent = 0;
+
+  activePlayer = 0;
+  currentScore = 0;
+  scores = [0, 0];
+
+  dicePicture.classList.toggle("hidden");
+}
+
 // When the dice is rolled, Generate a random number from 1-6
-btnRollDice.addEventListener("click", function () {
+rollDiceBtn.addEventListener("click", function () {
   let dice = Math.trunc(Math.random() * 6) + 1;
 
   // Use the if statement to determine the dice pics to be shown when it is rolled
@@ -36,8 +50,8 @@ btnRollDice.addEventListener("click", function () {
     document.querySelector(`.current-score--${activePlayer}`).textContent =
       currentScore;
   } else {
-    // If the rolled dice is 1, then the current player's score clears and returns to 0
-    document.querySelector(`.current-score--${activePlayer}`).textContent = 0;
+    /* ** If the rolled dice is 1, then the current player's score clears and returns to 0
+     * Then switches to the next player */
 
     switchPlayer();
   }
@@ -46,7 +60,8 @@ btnRollDice.addEventListener("click", function () {
 });
 
 const switchPlayer = () => {
-  // Switch from the current player to the next (If the active current player is Player 1(0), switch to Player 2(0))
+  document.querySelector(`.current-score--${activePlayer}`).textContent = 0;
+  // Switch from the current player to the next (If the active current player is Player 1(0), switch to Player 2(1))
   activePlayer = activePlayer === 0 ? 1 : 0;
   currentScore = 0;
 
@@ -57,7 +72,7 @@ const switchPlayer = () => {
 
 // Hold Score Btn Function
 
-btnHold.addEventListener("click", function () {
+holdBtn.addEventListener("click", function () {
   // When the hold button is clicked, the score[0] or score[1] is added to the current score
   scores[activePlayer] += currentScore;
 
@@ -71,9 +86,11 @@ btnHold.addEventListener("click", function () {
     document.querySelector(`.total-score--${activePlayer}`).textContent =
       scores[activePlayer];
     alert(`Player ${activePlayer + 1} wins`);
-    // init();
+    init();
   }
+
   switchPlayer();
 });
 
-console.log(totalScoreEl0, totalScoreEl1, scores, currentScore);
+// New Game Function
+newGameBtn.addEventListener("click", init);
