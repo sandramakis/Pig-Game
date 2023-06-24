@@ -37,6 +37,7 @@ function init() {
 
 // When the dice is rolled, Generate a random number from 1-6
 rollDiceBtn.addEventListener("click", function () {
+  dicePicture.classList.remove("hidden");
   let dice = Math.trunc(Math.random() * 6) + 1;
 
   // Use the if statement to determine the dice pics to be shown when it is rolled
@@ -85,7 +86,7 @@ holdBtn.addEventListener("click", function () {
   } else {
     document.querySelector(`.total-score--${activePlayer}`).textContent =
       scores[activePlayer];
-    alert(`Player ${activePlayer + 1} wins`);
+    alert(`🏆 Player ${activePlayer + 1} wins!`);
     init();
   }
 
