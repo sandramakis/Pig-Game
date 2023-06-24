@@ -20,16 +20,16 @@ main {
   align-items: center;
   padding: 2rem;
   height: 80vh;
-  margin: 1.7rem;
+  margin: 1rem;
 }
 
 main section {
-  width: 30%;
+  width: 100%;
   height: 90%;
   border: 10px solid pink;
   padding: 1rem;
   text-align: center;
-  margin: 0 1.4rem;
+  margin: 0 1rem;
 }
 
 .total {
@@ -44,7 +44,6 @@ main section {
   padding: 1rem 7rem;
   position: absolute;
   top: 70%;
-  width: 1%;
 }
 
 .btn {
@@ -102,4 +101,77 @@ img {
 
 .hidden {
   display: none;
+}
+
+/* MEDIA QUERY */
+
+@media screen and (max-width: 440px) {
+  main {
+    margin: 0.7rem;
+    padding: 1rem;
+  }
+
+  .current-score {
+    padding: 1rem 2rem;
+  }
+
+  img {
+    width: 50px;
+    height: 40px;
+  }
+
+  #roll,
+  #hold,
+  .dice-picture {
+    right: 40%;
+    width: 20%;
+  }
+
+  #new-game {
+    top: 2%;
+    right: 35%;
+    width: 30%;
+  }
+}
+
+/* @media screen and (min-width: 500px) {
+} */
+
+@media screen and (min-width: 768px) {
+  body {
+    height: 100vh;
+  }
+
+  main {
+    height: 100%;
+  }
+
+  .current-score {
+    padding: 1rem 5rem;
+    margin-left: 1rem;
+  }
+
+  .total {
+    margin: 8rem 0;
+  }
+
+  #new-game {
+    top: 5%;
+    right: 35%;
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .current-score {
+    margin-left: 3rem;
+    padding: 3rem;
+    width: 20%;
+  }
+
+  #new-game {
+    top: 9%;
+    right: 40%;
+    width: 20%;
+  }
 }
