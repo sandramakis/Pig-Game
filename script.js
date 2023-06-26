@@ -82,7 +82,7 @@ holdBtn.addEventListener("click", function () {
     scores[activePlayer] += currentScore;
 
     // Score is displayed in the activePlayer
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       document.querySelector(`.total-score--${activePlayer}`).textContent =
         scores[activePlayer];
 
